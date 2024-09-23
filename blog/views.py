@@ -35,7 +35,7 @@ def SignupPage(request):
       username = request.POST.get('Your Name')
       useremail = request.POST.get('Your Email')
       if request.POST.get('Password') == request.POST.get('Password2'):
-          password = request.POST.get('Password2')
+          password = request.POST.get('Password')
           user=User.objects.create_user(username=username,email=useremail,password=password)
           user.save()
           return redirect('home')
